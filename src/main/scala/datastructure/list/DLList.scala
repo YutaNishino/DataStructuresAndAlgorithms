@@ -2,21 +2,24 @@ package datastructure.list
 
 import datastructure.util.DLink
 
-class LList[E](size: Int = 0) extends ListADT[E] {
+class DLList[E](size: Int = 0) extends ListADT[E] {
   // ignore the input size which is there for the consistency with AList
   private var head: DLink[E] = new DLink[E](None, None, None)
 
-  private var tail: DLink[E] = head
+  private var tail: DLink[E] = new DLink[E](None, None, Some(head))
 
   private var curr: DLink[E] = head
 
   private var listSize: Int = 0
+
+  head.setNext(Some(tail))
 
   def clear: Unit = {
     head.setNext(None)
     head = new DLink[E](None, None, None)
     curr = head
     tail = new DLink[E](None, None, Some(head))
+    head.setNext(Some(tail))
     listSize = 0
   }
 

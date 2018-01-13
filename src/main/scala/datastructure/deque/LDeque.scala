@@ -48,9 +48,10 @@ class LDeque[E](size: Int = 10) extends DequeADT[E] {
     rear.element match {
       case None => None
       case Some(e) =>
+        val optionItem = rear.element
         rear = rear.prev.get
         dequeSize -= 1
-        rear.element
+        optionItem
     }
   }
 

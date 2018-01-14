@@ -15,7 +15,9 @@ case class TOH(operation: Operation, size: Int, start: Int, goal: Int, temp: Int
   def this(size: Int, start: Int, goal: Int) = this(MOVE, size, start, goal, -1)
 
   def move(): Unit = println(s"Move ring $size from pole $start to pole $goal")
+}
 
+class TowerOfHanoi {
   def solveTOH (height: Int): Unit = {
     val stack = new Stack[TOH]()
     stack.push (new TOH (height, 1, 2, 3) )

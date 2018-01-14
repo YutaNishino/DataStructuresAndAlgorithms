@@ -6,7 +6,7 @@ object InsertionSort {
       var j = i
       while (j > 0 && ordering.compare(array(j), array(j - 1)) < 0) {
         val temp = array(j - 1)
-        array(j-1) = array(j)
+        array(j - 1) = array(j)
         array(j) = temp
         j -= 1
       }

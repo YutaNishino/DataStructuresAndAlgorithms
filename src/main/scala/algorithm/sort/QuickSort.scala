@@ -46,9 +46,7 @@ object QuickSort {
         end
       }
       // only two elements
-      else {
-        return start
-      }
+      else start
     }
   }
 }
